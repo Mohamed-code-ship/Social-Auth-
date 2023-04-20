@@ -1,0 +1,13 @@
+{% load socialaccount %}
+
+<h1>Authenticator</h1>
+
+{% if request.user.is_authenticated%}
+      button for log out 
+
+{% else %}
+    <a href = "{%  provider_login_url 'github' %}">Log In with github</a>
+
+    <a href = "{% url 'account logout'%}">Log out </a>
+
+{% endif %}
